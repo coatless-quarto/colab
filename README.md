@@ -1,7 +1,13 @@
 # quarto-colab: A Quarto Extension for Google Colaboratory
 
+> [!IMPORTANT]
+>
+> This is a WIP extension. Please check back later for more information.
+
+
 The `{quarto-colab}`  extension allows you to incorporate Google Colaboratory badges and links into your Quarto documents.
 
+This extension is based on the [Using Google Colab with GitHub](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb#scrollTo=8QAWNjizy_3O) notebook.
 
 > [!NOTE]
 > This Quarto extension is open source software and is **not affiliated with** Google. The extension is at best a community effort to simplify the integration of Google's Colaboratory runtime inside of Quarto documents.
@@ -24,9 +30,19 @@ This command will download and install the extension under the `_extensions` sub
 
 *TODO*: Describe how to use your format.
 
-## Format Options
+### Configuration
 
-*TODO*: If your format has options that can be set via document metadata, describe them.
+Specify the `colab` extension in the `_quarto.yml` project file to enable the extension. The `colab` extension supports the following configuration options:
+
+```yaml
+colab:
+  gh-user: coatless-quarto
+  gh-repo: colab
+  gh-branch: main
+
+filter: 
+  - colab
+```
 
 ## Example
 
