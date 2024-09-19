@@ -1,0 +1,17 @@
+---
+title: Example Template
+format:
+  ipynb: default
+author: Amazing Mr. Mistoffelees
+date: last-modified
+colab:
+  gh-user: coatless-quarto
+  gh-repo: colab
+  gh-branch: main
+filters: [colab]
+---
+
+## Introduction
+
+This is an example notebook that demonstrates how to use the `colab` filter to add a badge to the notebook that links to Google Colab.
+
