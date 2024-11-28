@@ -3,3 +3,5 @@
 /.quarto/
 build*
 .DS_Store*
+_site*
+README_files*
