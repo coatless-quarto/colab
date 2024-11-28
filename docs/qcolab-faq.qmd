@@ -1,0 +1,140 @@
+---
+title: Quarto Colab Extension FAQ
+callout-appearance: simple
+---
+
+## What does the quarto-colab extension do?
+
+The `{quarto-colab}` extension adds Google Colab support to Quarto notebooks. It automatically adds a "Open in Colab" badge to your notebooks and handles language-specific setup for various programming languages when running in Colab.
+
+
+## How do I install the extension?
+
+Add the extension to your Quarto project by running the following command in Terminal within your Quarto project directory:
+
+```bash
+quarto add username/quarto-colab
+```
+
+This command will download and install the extension under the `_extensions` subdirectory of your Quarto project. If you are using version control, ensure that you include this directory in your repository.
+
+## What configuration is required in my Quarto document?
+
+You need to add GitHub repository information to your document's YAML header:
+
+```yaml
+---
+title: "My Notebook"
+colab:
+  gh-user: "username"
+  gh-repo: "repository-name"
+  gh-branch: "main"  # Optional, defaults to "main"
+---
+```
+
+## What programming languages are supported?
+
+The extension supports multiple languages including:
+
+- R (via rpy2)
+- SQL (via jupysql)
+- Octave (via oct2py)
+- Ruby
+- Perl
+- Bash/Shell
+- SAS (via saspy)
+
+:::{.callout-important}
+We're working on adding support for Julia in the future. 
+:::
+
+
+### What are Jupyter magic commands?
+
+[Magic commands][ipynbmagic] are special commands in Jupyter notebooks that provide additional functionality beyond regular code execution. They start with either a single `%` (line magic) or double `%%` (cell magic) and can modify the behavior of the notebook or execute special operations.
+
+### What's the difference between line magic and cell magic?
+
+- **Line magic (`%`)**: Applies to a single line and is used at the start of that line
+  ```python
+  %timeit sum(range(1000))  # Measures execution time of this line
+  ```
+- **Cell magic (`%%`)**: Applies to the entire cell and must be placed at the very first line of the cell
+  ```python
+  %%R
+  # This entire cell will be executed as R code
+  1 + 1
+  plot(cars)
+  ```
+
+### How does this extension use magic commands?
+
+This extension automatically adds the appropriate cell magic commands (`%%`) to code blocks based on their language. For example:
+
+- R code blocks get `%%R` added automatically
+- SQL code blocks get `%%sql` added automatically
+- Octave code blocks get `%%octave` added automatically
+
+This allows you to write code in different languages without manually adding the magic commands.
+
+## How does language setup work?
+
+When the extension detects code blocks in specific languages, it automatically adds necessary setup cells at the beginning of the notebook. For example:
+
+- For R: Installs and configures rpy2
+- For Octave: Installs Octave and oct2py
+- For SQL: Sets up jupysql with DuckDB support
+
+## Why isn't my Colab badge showing up?
+
+Check that:
+
+1. You've properly configured the GitHub information in your document's YAML header
+2. Your document is being rendered as an ipynb notebook
+3. All required metadata fields (gh-user and gh-repo) are specified
+
+## Why aren't my code blocks working in Colab?
+
+If code blocks aren't executing properly:
+
+1. Ensure the language is supported by the extension
+2. Check that the setup cells were properly added at the beginning of the notebook
+3. Verify that the code cells have the correct language specification
+
+## Can I customize the language setup?
+
+Yes, you can customize both magic commands and setup cells by adding configuration to your document's YAML header:
+
+```yaml
+magic-commands:
+  customlang: "%%custommagic"
+setup-cells:
+  customlang:
+    language: "python"
+    code: |
+      # Your custom setup code here
+      !pip install your-package
+```
+
+## Can I use local runtimes with this extension?
+
+Yes, particularly useful for languages like SAS that require local installations. [Colab supports local runtimes][colablocal], which can be configured through the "Connect to local runtime..." option.
+
+## Does this work with private repositories?
+
+Yes, but users will need appropriate access to your GitHub repository to open it in Colab. Make sure your [repository permissions are configured correctly][ghprivateinvite].
+
+## How do I access private repositories in Colab?
+
+If you're having trouble accessing private repositories in Colab, make sure you've granted Colab access to your private GitHub data. Here's how to do it:
+
+1. Go to Colab main page <https://colab.research.google.com>.
+1. Go to GitHub tab.
+1. Check the checkbox with the label "include private repos".
+1. Colab open a pop up that will request permissions to access your GitHub, press "Authorize Colab".
+1. Once you've authorized Colab, you should be able to access your private repositories.
+
+[colablocal]: https://research.google.com/colaboratory/local-runtimes.html
+[ipynbmagic]: https://ipython.readthedocs.io/en/stable/interactive/magics.html
+[ghprivateinvite]: https://docs.github.com/en/account-and-profile/setting-up-and-managing-your-personal-account-on-github/managing-access-to-your-personal-repositories/inviting-collaborators-to-a-personal-repository
+

@@ -1,0 +1,39 @@
+project:
+  type: website
+
+website:
+  title: "colab"
+  reader-mode: true
+  repo-url: https://github.com/coatless-quarto/colab/
+  repo-actions: [edit, issue]
+  sidebar:
+    logo: "https://github.com/user-attachments/assets/4e9340ce-fa33-467e-a77e-4662b3683c27"
+    logo-alt: "A hexagon logo for the colab extension."
+    style: "floating"
+    search: true
+    tools:
+      - icon: github
+        href: https://github.com/coatless-quarto/colab/
+    contents: 
+      - text: "Home"
+        file: index.qmd
+      - text: "Examples"
+        file: qcolab-example.qmd
+      - section: "Support"
+        contents:
+        - text: "FAQ"
+          href: qcolab-faq.qmd
+        - text: "Submit an issue"
+          href: https://github.com/coatless-quarto/colab/issues/new/choose
+      - section: "Extra"
+        contents:
+        - qcolab-release-notes.qmd
+
+format: 
+  html:
+    toc: true
+
+colab:
+  gh-user: "coatless-quarto" # Your GitHub username
+  gh-repo: "colab"           # Your repository name
+  gh-branch: "main"          # Optional, defaults to "main"

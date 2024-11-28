@@ -1,0 +1,17 @@
+---
+title: "Release Notes"
+date: "06-10-2024"
+date-modified: last-modified
+engine: markdown
+format: 
+  html:
+    toc: true
+---
+
+# 0.0.0-dev.1: ?? (??-??-????)
+
+## Features
+
+- Colab badge generation
+- Convert non-Python code cells to use Jupyter's magic commands
+- Patch `knitr` output to ensure source code is retained.
