@@ -1,4 +1,4 @@
-# quarto-colab: A Quarto Extension for Google Colaboratory
+# quarto-colab: A Quarto Extension for Google Colaboratory <img src="https://github.com/user-attachments/assets/4e9340ce-fa33-467e-a77e-4662b3683c27" align ="right" alt="Logo: A notebook going into an abstract cloud" width ="150"/>
 
 > [!IMPORTANT]
 >
