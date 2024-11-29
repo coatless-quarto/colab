@@ -97,13 +97,21 @@ Replace `USERNAME`, `REPO`, `BRANCH`, and `PATH_TO_NOTEBOOK.ipynb` with your spe
 
 The extension includes pre-configured setup for:
 
-- R (using rpy2)
-- Octave (using oct2py)
-- SQL (using jupysql with DuckDB)
-- SAS (requires licensed copy and a way to access it)
+- R (using [`{rpy2}`][rpy2magic])
+- Julia (using [`{juliacall}`][juliacallmagic])
+- Octave (using [`{oct2py}`][oct2pymagic])
+- SQL (using [`{jupysql}`][jupysqlmagic])
+- SAS (using [`{saspy}`][saspymagic] + licensed copy and a way to access it)
 
 Additional languages are supported via magic commands without requiring specific setup cells.
 
 ## Acknowledgements
 
 This extension is based on the [Using Google Colab with GitHub](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb#scrollTo=8QAWNjizy_3O) notebook.
+
+
+[rpy2magic]: https://rpy2.github.io/doc/v3.5.x/html/interactive.html#module-rpy2.ipython.rmagic
+[juliacallmagic]: https://juliapy.github.io/PythonCall.jl/stable/compat/#IPython 
+[oct2pymagic]: https://nbviewer.org/github/blink1073/oct2py/blob/main/example/octavemagic_extension.ipynb?create=1
+[jupysqlmagic]: https://jupysql.ploomber.io/en/latest/api/magic-sql.html
+[saspymagic]: https://sassoftware.github.io/saspy/advanced-topics.html#jupyter-magics

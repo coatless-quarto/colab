@@ -57,7 +57,17 @@ local DEFAULT_SETUP_CELLS = {
 # Install and configure SAS integration
 !pip install saspy sas_kernel
 %load_ext sas_magic]]
-    }
+    },
+    julia = {
+        language = "python",
+        code = [[
+# Install and configure Julia integration
+!pip install -qqq juliacall
+# Load Julia extension 
+from juliacall import Main as jl
+# Load Julia magic
+%load_ext juliacall.ipython
+    ]]}
 }
 
 -- Global variables to store configuration
