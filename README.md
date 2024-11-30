@@ -105,6 +105,12 @@ The extension includes pre-configured setup for:
 
 Additional languages are supported via magic commands without requiring specific setup cells.
 
+- Ruby 
+- Perl 
+- bash/sh
+
+For additional languages, you can define custom magic commands and setup cells in the document's header.
+
 ## Acknowledgements
 
 This extension is based on the [Using Google Colab with GitHub](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb#scrollTo=8QAWNjizy_3O) notebook.

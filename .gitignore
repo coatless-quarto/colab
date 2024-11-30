@@ -5,3 +5,4 @@ build*
 .DS_Store*
 _site*
 README_files*
+*.html
