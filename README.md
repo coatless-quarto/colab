@@ -109,6 +109,9 @@ Additional languages are supported via magic commands without requiring specific
 
 This extension is based on the [Using Google Colab with GitHub](https://colab.research.google.com/github/googlecolab/colabtools/blob/master/notebooks/colab-github-demo.ipynb#scrollTo=8QAWNjizy_3O) notebook.
 
+### Notes
+
+This extension formed the basis of my [**second** ever issue ticket](https://github.com/quarto-dev/quarto-cli/issues?q=is%3Aissue%20author%3Acoatless%20sort%3Acreated-asc) on the Quarto project's GitHub issue tracker [quarto-dev/quarto-cli#1224](https://github.com/quarto-dev/quarto-cli/issues/1224). The issue ticket was opened on **October 1, 2022**. Wowie, how time flies when you're having fun!
 
 [rpy2magic]: https://rpy2.github.io/doc/v3.5.x/html/interactive.html#module-rpy2.ipython.rmagic
 [juliacallmagic]: https://juliapy.github.io/PythonCall.jl/stable/compat/#IPython 
