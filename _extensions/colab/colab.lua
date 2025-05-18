@@ -1,4 +1,3 @@
-
 -- Type definition for GitHub information
 ---@class GitHubInfo
 ---@field user string
@@ -83,7 +82,7 @@ function Pandoc(doc)
     if github_info then
         -- Get the notebook name from the metadata or use a default
         ---@type string | nil
-        local notebook_name = quarto.doc.project_output_file()
+        local notebook_name = quarto.doc.project_output_file() or quarto.doc.output_file
         
         -- Construct the Colab URL
         ---@type string
@@ -105,6 +104,3 @@ function Pandoc(doc)
     
     return doc
 end
-
-
-
