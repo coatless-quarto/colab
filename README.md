@@ -47,6 +47,30 @@ filters:
 ---
 ```
 
+### Scrolling to Specific Cells
+
+You can configure the extension to automatically scroll to a specific cell when opening the notebook in Colab:
+
+```yaml
+colab:
+  gh-user: "username"
+  gh-repo: "reponame"
+  gh-branch: "main"
+  scroll-to: "sGO-VJ_Bb0tU"   # Cell ID to scroll to
+```
+
+This will create a Colab link that includes the scrollTo parameter, like:
+
+```default
+https://colab.research.google.com/github/username/reponame/blob/main/notebook.ipynb#scrollTo=sGO-VJ_Bb0tU
+```
+
+> [!TIP]
+>
+> To find a cell's ID in Colab, right-click on a cell and select "Copy Link to Cell". 
+> The part after `scrollTo=` is the cell ID.
+
+
 ### Language Configuration
 
 #### Magic Commands (Optional)

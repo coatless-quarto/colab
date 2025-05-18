@@ -13,7 +13,7 @@ The `{quarto-colab}` extension adds Google Colab support to Quarto notebooks. It
 Add the extension to your Quarto project by running the following command in Terminal within your Quarto project directory:
 
 ```bash
-quarto add username/quarto-colab
+quarto add coatless-quarto/colab
 ```
 
 This command will download and install the extension under the `_extensions` subdirectory of your Quarto project. If you are using version control, ensure that you include this directory in your repository.
@@ -31,6 +31,39 @@ colab:
   gh-branch: "main"  # Optional, defaults to "main"
 ---
 ```
+
+## How do I make the Colab link scroll to a specific cell?
+
+You can use the scroll-to parameter in your configuration:
+
+```yaml
+---
+colab:
+  gh-user: "username"
+  gh-repo: "repository-name"
+  gh-branch: "main"
+  scroll-to: "cell_id_here" # Cell ID to scroll to
+---
+```
+
+This will append `#scrollTo=cell_id_here` to the Colab URL, which will automatically scroll to that specific cell when the notebook is opened in Colab.
+
+### How do I find a cell's ID for the scroll-to parameter?
+
+To find a cell's ID in Colab:
+
+1. Open the notebook in Colab
+1. Right-click on the target cell
+1. Select "Copy Link to Cell"
+1. The part after `scrollTo=` in the copied URL is the cell ID
+
+For example, if the copied link is:
+
+```default
+https://colab.research.google.com/github/username/reponame/blob/main/notebook.ipynb#scrollTo=sGO-VJ_Bb0tU
+```
+
+Then, the cell ID is `sGO-VJ_Bb0tU`.
 
 ## What programming languages are supported?
 

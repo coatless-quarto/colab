@@ -4,6 +4,7 @@
 ---@field user string
 ---@field repo string
 ---@field branch string
+---@field scrollTo string|nil
 
 -- Function to extract GitHub information from metadata
 ---@param meta pandoc.Meta
@@ -22,6 +23,8 @@ local function extract_github_info(meta)
     local github_repo = pandoc.utils.stringify(meta.colab["gh-repo"])
     ---@type string
     local github_branch = pandoc.utils.stringify(meta.colab["gh-branch"]) or "main" -- Default to "main" if not specified
+    ---@type string|nil
+    local scroll_to = meta.colab["scroll-to"] and pandoc.utils.stringify(meta.colab["scroll-to"]) or nil
     
     -- Validate required fields
     if not (github_user and github_repo) then
@@ -33,7 +36,8 @@ local function extract_github_info(meta)
     return {
         user = github_user,
         repo = github_repo,
-        branch = github_branch
+        branch = github_branch,
+        scrollTo = scroll_to
     }
 end
 
@@ -49,14 +53,20 @@ end
 ---@return string
 local function construct_colab_url(github_info, notebook_relative_path)
     --- https://colab.research.google.com/github/<gh-username>/<repo>/blob/<branch>/<path>
-
-    return string.format(
+    local base_url = string.format(
         "https://colab.research.google.com/github/%s/%s/blob/%s/%s",
         github_info.user,
         github_info.repo,
         github_info.branch,
         notebook_relative_path
     )
+    
+    -- Append scrollTo parameter if provided
+    if github_info.scrollTo then
+        return base_url .. "#scrollTo=" .. github_info.scrollTo
+    else
+        return base_url
+    end
 end
 
 -- Main filter function applied to the Pandoc document to insert the Colab link
