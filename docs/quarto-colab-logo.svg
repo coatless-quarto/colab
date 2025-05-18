@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 2521 2911">
+  <!-- Generator: Adobe Illustrator 29.1.0, SVG Export Plug-In . SVG Version: 2.1.0 Build 142)  -->
+  <defs>
+    <style>
+      .st0, .st1, .st2, .st3, .st4 {
+        fill: none;
+      }
+
+      .st1 {
+        stroke: #fbbc05;
+      }
+
+      .st1, .st2, .st5, .st3, .st4 {
+        stroke-linecap: round;
+      }
+
+      .st1, .st2, .st3, .st4 {
+        stroke-width: 60px;
+      }
+
+      .st2 {
+        stroke: #4285f4;
+      }
+
+      .st6, .st7 {
+        fill: #4285f4;
+      }
+
+      .st8 {
+        fill: url(#linear-gradient1);
+      }
+
+      .st9, .st10 {
+        fill: #fbbc05;
+      }
+
+      .st5 {
+        fill-opacity: .9;
+        stroke: #fff;
+        stroke-linejoin: round;
+        stroke-width: 50px;
+      }
+
+      .st5, .st11, .st12 {
+        fill: #fff;
+      }
+
+      .st13, .st14, .st11, .st10, .st15, .st16, .st7, .st17, .st18 {
+        isolation: isolate;
+      }
+
+      .st13, .st10, .st7, .st18 {
+        opacity: .8;
+      }
+
+      .st13, .st19 {
+        fill: #ea4335;
+      }
+
+      .st20 {
+        fill: #dce1eb;
+        fill-rule: evenodd;
+      }
+
+      .st3 {
+        stroke: #ea4335;
+      }
+
+      .st21 {
+        fill: #42709b;
+      }
+
+      .st22, .st18 {
+        fill: #34a853;
+      }
+
+      .st23, .st15 {
+        fill: #202124;
+      }
+
+      .st11, .st16 {
+        font-family: Verdana, Verdana;
+        font-size: 170px;
+      }
+
+      .st12 {
+        stroke: #dadce0;
+        stroke-width: 30px;
+      }
+
+      .st15 {
+        font-family: Arial-BoldMT, Arial;
+        font-size: 220px;
+        font-weight: 700;
+      }
+
+      .st16 {
+        fill: #010101;
+      }
+
+      .st24 {
+        fill: url(#linear-gradient);
+      }
+
+      .st24, .st17, .st25 {
+        display: none;
+      }
+
+      .st4 {
+        stroke: #34a853;
+      }
+
+      .st26 {
+        fill: #555;
+      }
+
+      .st27 {
+        clip-path: url(#clippath);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="961.4" y1="1877.5" x2="965.6" y2="1873.3" gradientTransform="translate(-441947 1014044.5) scale(460 -540)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f8f9fa"/>
+      <stop offset="1" stop-color="#e9ecef"/>
+    </linearGradient>
+    <clipPath id="clippath">
+      <path class="st0" d="M759.7,608h1001.6c15,0,27.1,20.8,27.1,46.4v216.3c0,25.6-12.1,46.4-27.1,46.4h-1001.6c-15,0-27.1-20.8-27.1-46.4v-216.3c0-25.6,12.1-46.4,27.1-46.4h0Z"/>
+    </clipPath>
+    <linearGradient id="linear-gradient1" x1="1920.4" y1="-74.2" x2="1920.4" y2="-58.8" gradientTransform="translate(-223424.4 2092.9) scale(117 20)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#bbb" stop-opacity=".1"/>
+      <stop offset="1" stop-color="#000" stop-opacity=".1"/>
+    </linearGradient>
+  </defs>
+  <path class="st5" d="M1260.5,144.1l1008,584.5v1169l-1008,584.5L252.5,1897.6V728.6L1260.5,144.1Z"/>
+  <path class="st24" d="M1263.8,184.5l984.5,502.4v1256l-984.5,502.4-984.5-502.4V686.9l984.5-502.4Z"/>
+  <path class="st2" d="M1260.5,144.1l1008,584.5"/>
+  <path class="st3" d="M2268.5,728.6v1169"/>
+  <path class="st1" d="M2268.5,1897.6l-1008,584.5"/>
+  <path class="st4" d="M1260.5,2482.1L252.5,1897.6"/>
+  <path class="st3" d="M252.5,1897.6V728.6"/>
+  <path class="st2" d="M252.5,728.6L1260.5,144.1"/>
+  <rect class="st12" x="679.4" y="559.6" width="1162.2" height="1432" rx="60" ry="60"/>
+  <rect class="st7" x="831.5" y="994.5" width="891.5" height="136.5" rx="20" ry="20"/>
+  <rect class="st18" x="831.5" y="1222.1" width="891.5" height="136.5" rx="20" ry="20"/>
+  <rect class="st10" x="831.5" y="1449.6" width="891.5" height="136.5" rx="20" ry="20"/>
+  <rect class="st13" x="831.5" y="1677.2" width="891.5" height="136.5" rx="20" ry="20"/>
+  <g class="st14">
+    <text class="st15" transform="translate(972.7 2200)"><tspan x="0" y="0">colab</tspan></text>
+  </g>
+  <g>
+    <path class="st23" d="M0,0"/>
+    <g class="st27">
+      <g>
+        <path class="st21" d="M732.6,608h346.2v309.1h-346.2v-309.1h0Z"/>
+        <path class="st26" d="M1063.3,608h725.1v309.1h-725.1v-309.1Z"/>
+        <path class="st8" d="M732.6,608h1055.7v309.1H732.6v-309.1Z"/>
+      </g>
+    </g>
+    <g class="st25">
+      <path class="st6" d="M889.4,755.7v-118.1c-62.7,4.4-112.7,55.1-116.1,118.1h116.1Z"/>
+      <path class="st19" d="M905.1,755.7h118.3c-3.4-63.8-54.5-114.9-118.3-118.3v118.3h0Z"/>
+      <path class="st9" d="M889.4,771.5h-115.8c4.4,62,53.9,111.5,115.8,115.8v-115.8Z"/>
+      <path class="st22" d="M905.1,771.5v116.1c63.1-3.4,113.7-53.3,118.1-116.1h-118.1Z"/>
+    </g>
+    <g class="st14">
+      <g class="st17">
+        <text class="st16" transform="translate(1094 837.1)"><tspan x="0" y="0">Open in</tspan></text>
+      </g>
+    </g>
+    <g class="st14">
+      <text class="st11" transform="translate(1094 821.7)"><tspan x="0" y="0">Open in</tspan></text>
+    </g>
+  </g>
+  <g>
+    <path class="st20" d="M889.1,757.4v-114.9c-61,4.3-109.6,53.6-112.9,114.9h112.9Z"/>
+    <path class="st20" d="M904.3,757.4h115.1c-3.3-62-53-111.8-115.1-115.1v115.1h0Z"/>
+    <path class="st20" d="M889.1,772.7h-112.7c4.3,60.3,52.4,108.5,112.7,112.7v-112.7Z"/>
+    <path class="st20" d="M904.3,772.7v112.9c61.4-3.3,110.6-51.9,114.9-112.9h-114.9Z"/>
+  </g>
+</svg>

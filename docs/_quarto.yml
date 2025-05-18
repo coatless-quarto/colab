@@ -7,7 +7,7 @@ website:
   repo-url: https://github.com/coatless-quarto/colab/
   repo-actions: [edit, issue]
   sidebar:
-    logo: "https://github.com/user-attachments/assets/4e9340ce-fa33-467e-a77e-4662b3683c27"
+    logo: "quarto-colab-logo.svg"
     logo-alt: "A hexagon logo for the colab extension."
     style: "floating"
     search: true

@@ -1,4 +1,4 @@
-# quarto-colab: A Quarto Extension for Google Colaboratory <img src="https://github.com/user-attachments/assets/4e9340ce-fa33-467e-a77e-4662b3683c27" align="right" alt="Logo: A notebook going into an abstract cloud" width="150"/>
+# quarto-colab: A Quarto Extension for Google Colaboratory <img src="docs/quarto-colab-logo.svg" align="right" alt="Logo: A notebook going into an abstract cloud" width="150"/>
 
 The `{quarto-colab}` extension enables Google Colab integration for your Quarto documents rendered to Juypter Notebook. It adds "Open in Colab" badges and handles the configuration of Jupyter magic commands for languages like R, SQL, and Octave, letting anyone run your notebooks in Colab with a single click.
 

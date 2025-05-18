@@ -5,13 +5,15 @@ format:
     toc: false
 filters:
 - colab
+callout-appearance: minimal
 ---
 
 The `{quarto-colab}` extension enables Google Colab integration for your Quarto documents rendered to Juypter Notebook. It adds "Open in Colab" badges and handles the configuration of Jupyter magic commands for languages like R, SQL, and Octave, letting anyone run your notebooks in Colab with a single click.
 
-> [!NOTE]
->
-> This Quarto extension is open source software and is **not affiliated with** Google. The extension is at best a community effort to simplify the integration of Google's Colaboratory runtime inside of Quarto documents.
+
+:::{.callout-note}
+This Quarto extension is open source software and is **not affiliated with** Google. The extension is at best a community effort to simplify the integration of Google's Colaboratory runtime inside of Quarto documents.
+:::
 
 ## Installation
 
@@ -96,9 +98,9 @@ format:
 
 Replace `USERNAME`, `REPO`, `BRANCH`, and `PATH_TO_NOTEBOOK.ipynb` with your specific values.
 
-> [!NOTE]
-> 
-> We know this is a bit cumbersome and are working on a better solution.
+:::{.callout-note}
+We know this is a bit cumbersome and are working on a better solution.
+:::
 
 ## Supported Languages
 
