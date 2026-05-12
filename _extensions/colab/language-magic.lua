@@ -246,6 +246,8 @@ end
 ---@param doc pandoc.Doc
 ---@return pandoc.Doc
 function Pandoc(doc)
+    if not quarto.doc.is_format("ipynb") then return doc end
+
     local detectedLangs = detectLanguages(doc)
     local setupBlocks = createSetupCells(detectedLangs)
 
