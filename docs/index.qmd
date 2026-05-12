@@ -83,24 +83,18 @@ setup-cells:
       %load_ext rpy2.ipython
 ```
 
-### HTML Support (Work in Progress)
+### HTML Support
 
-While automatic HTML integration is under development, you can manually add Colab links to your HTML output:
+To add an **Open in Colab** link to the sidebar of your HTML output, set `html-link: true` in the `colab:` block:
 
 ```yaml
-format:
-  html:
-    code-links:
-      - text: "Open in Colab"
-        href: "https://colab.research.google.com/github/USERNAME/REPO/blob/BRANCH/PATH_TO_NOTEBOOK.ipynb"
-        icon: "laptop"
+colab:
+  gh-user: "username"
+  gh-repo: "reponame"
+  html-link: true
 ```
 
-Replace `USERNAME`, `REPO`, `BRANCH`, and `PATH_TO_NOTEBOOK.ipynb` with your specific values.
-
-:::{.callout-note}
-We know this is a bit cumbersome and are working on a better solution.
-:::
+The link will appear in the page sidebar under "Code Links" and will automatically point to the sibling `.ipynb` output file.
 
 ## Supported Languages
 
