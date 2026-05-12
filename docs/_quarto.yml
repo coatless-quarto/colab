@@ -37,3 +37,4 @@ colab:
   gh-user: "coatless-quarto" # Your GitHub username
   gh-repo: "colab"           # Your repository name
   gh-branch: "main"          # Optional, defaults to "main"
+  html-link: true            # Add an "Open in Colab" link to HTML output

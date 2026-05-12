@@ -24,13 +24,13 @@ local function extract_github_info(meta)
     local github_branch = pandoc.utils.stringify(meta.colab["gh-branch"]) or "main" -- Default to "main" if not specified
     ---@type string|nil
     local scroll_to = meta.colab["scroll-to"] and pandoc.utils.stringify(meta.colab["scroll-to"]) or nil
-    
+
     -- Validate required fields
     if not (github_user and github_repo) then
         quarto.log.error("Warning: Missing required Colab metadata fields (gh-user or gh-repo).\n")
         return nil
     end
-    
+
     -- Return GitHub information as a table
     return {
         user = github_user,
@@ -73,34 +73,56 @@ end
 ---@return pandoc.Pandoc
 function Pandoc(doc)
 
-    -- Check if the document is a Jupyter notebook
-    if not quarto.doc.is_format("ipynb") then return doc end
-
-    -- Extract GitHub information from metadata
     local github_info = extract_github_info(doc.meta)
+    if not github_info then return doc end
 
-    if github_info then
+    if quarto.doc.is_format("ipynb") then
         -- Get the notebook name from the metadata or use a default
         ---@type string | nil
         local notebook_name = quarto.doc.project_output_file() or quarto.doc.output_file
-        
+
         -- Construct the Colab URL
         ---@type string
         local colab_url = construct_colab_url(github_info, notebook_name)
-        
+
         -- Create the Colab badge link
         ---@type pandoc.Image
         local colab_badge = create_colab_badge()
         ---@type pandoc.Link
         local colab_link = pandoc.Link(colab_badge, colab_url)
-        
+
         -- Create a new block with the Colab link
         ---@type pandoc.Block
         local colab_block = pandoc.Para({colab_link})
-        
+
         -- Insert the Colab link block at the beginning of the document
         table.insert(doc.blocks, 1, colab_block)
+
+    elseif quarto.doc.is_format("html") and doc.meta.colab["html-link"] == true then
+        ---@type string | nil
+        local output_file = quarto.doc.project_output_file() or quarto.doc.output_file
+        -- Infer the sibling .ipynb path from the HTML output path
+        local notebook_name = output_file:gsub("%.html$", ".ipynb")
+
+        ---@type string
+        local colab_url = construct_colab_url(github_info, notebook_name)
+
+        -- Quarto resolves code-links as a format option before Lua filters run,
+        -- so metadata injection cannot hook into it. quarto.doc.include_text is
+        -- the standard Lua API for injecting HTML content, and we replicate the
+        -- same div structure Quarto generates for a native code-links entry.
+        quarto.doc.include_text("after-body", string.format([[
+<script type="text/javascript">
+(function () {
+  var sidebar = document.getElementById("quarto-margin-sidebar");
+  if (!sidebar) return;
+  var div = document.createElement("div");
+  div.className = "quarto-code-links";
+  div.innerHTML = '<h2>Code Links<\/h2><ul><li><a href="%s"><i class="bi bi-laptop"><\/i>Open in Colab<\/a><\/li><\/ul>';
+  sidebar.appendChild(div);
+})();
+</script>]], colab_url))
     end
-    
+
     return doc
 end
