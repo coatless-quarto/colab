@@ -28,6 +28,8 @@ website:
       - section: "Extra"
         contents:
         - qcolab-release-notes.qmd
+        - href: https://blog.thecoatlessprofessor.com/projects/colab/
+          text: "Blog posts"
 
 format: 
   html:
