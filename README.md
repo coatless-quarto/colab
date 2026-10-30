@@ -67,9 +67,8 @@ https://colab.research.google.com/github/username/reponame/blob/main/notebook.ip
 
 > [!TIP]
 >
-> To find a cell's ID in Colab, right-click on a cell and select "Copy Link to Cell". 
+> To find a cell's ID in Colab, right-click on a cell and select "Copy Link to Cell".
 > The part after `scrollTo=` is the cell ID.
-
 
 ### Language Configuration
 
@@ -98,24 +97,18 @@ setup-cells:
       %load_ext rpy2.ipython
 ```
 
-### HTML Support (Work in Progress)
+### HTML Support
 
-While automatic HTML integration is under development, you can manually add Colab links to your HTML output:
+To add an **Open in Colab** link to the sidebar of your HTML output, set `html-link: true` in the `colab:` block:
 
 ```yaml
-format:
-  html:
-    code-links:
-      - text: "Open in Colab"
-        href: "https://colab.research.google.com/github/USERNAME/REPO/blob/BRANCH/PATH_TO_NOTEBOOK.ipynb"
-        icon: "laptop"
+colab:
+  gh-user: "username"
+  gh-repo: "reponame"
+  html-link: true
 ```
 
-Replace `USERNAME`, `REPO`, `BRANCH`, and `PATH_TO_NOTEBOOK.ipynb` with your specific values.
-
-> [!NOTE]
-> 
-> We know this is a bit cumbersome and are working on a better solution.
+The link will appear in the page sidebar under "Code Links" and will automatically point to the sibling `.ipynb` output file.
 
 ## Supported Languages
 
@@ -129,8 +122,8 @@ The extension includes pre-configured setup for:
 
 Additional languages are supported via magic commands without requiring specific setup cells.
 
-- Ruby 
-- Perl 
+- Ruby
+- Perl
 - bash/sh
 
 For additional languages, you can define custom magic commands and setup cells in the document's header.
@@ -144,7 +137,7 @@ This extension is based on the [Using Google Colab with GitHub](https://colab.re
 This extension formed the basis of my [**second** ever issue ticket](https://github.com/quarto-dev/quarto-cli/issues?q=is%3Aissue%20author%3Acoatless%20sort%3Acreated-asc) on the Quarto project's GitHub issue tracker [quarto-dev/quarto-cli#1224](https://github.com/quarto-dev/quarto-cli/issues/1224). The issue ticket was opened on **October 1, 2022**. Wowie, how time flies when you're having fun!
 
 [rpy2magic]: https://rpy2.github.io/doc/v3.5.x/html/interactive.html#module-rpy2.ipython.rmagic
-[juliacallmagic]: https://juliapy.github.io/PythonCall.jl/stable/compat/#IPython 
+[juliacallmagic]: https://juliapy.github.io/PythonCall.jl/stable/compat/#IPython
 [oct2pymagic]: https://nbviewer.org/github/blink1073/oct2py/blob/main/example/octavemagic_extension.ipynb?create=1
 [jupysqlmagic]: https://jupysql.ploomber.io/en/latest/api/magic-sql.html
 [saspymagic]: https://sassoftware.github.io/saspy/advanced-topics.html#jupyter-magics
