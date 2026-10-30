@@ -1,0 +1,42 @@
+---
+title: "Colab Extension Examples"
+format:
+  html:
+    toc: true
+  ipynb: default
+filters:
+  - colab
+setup-cells:
+  python:
+    language: python
+    code: |
+      # Install required packages
+      !pip install matplotlib numpy
+---
+
+## Python Example
+
+This example demonstrates how the `colab` extension adds a setup cell when rendering to an `.ipynb` notebook for use in Google Colab. The setup cell (which installs dependencies) only appears in the notebook output — not in this HTML page.
+
+```{python}
+#| echo: true
+#| eval: false
+import numpy as np
+import matplotlib.pyplot as plt
+
+x = np.linspace(0, 2 * np.pi, 100)
+plt.plot(x, np.sin(x))
+plt.title("Sine Wave")
+plt.show()
+```
+
+## What to Expect
+
+When you open the rendered `.ipynb` in Google Colab, the first cell will be:
+
+```python
+# Install required packages
+!pip install matplotlib numpy
+```
+
+This cell is injected automatically from the `setup-cells: python:` block in the document's YAML header. It does **not** appear in any other output format (e.g. this HTML page).
