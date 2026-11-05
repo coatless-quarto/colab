@@ -18,7 +18,7 @@ This command will download and install the extension under the `_extensions` sub
 
 ### Requirements
 
-- Quarto >= 1.4.0
+- Quarto >= 1.11.0
 - `R` and `knitr` (for polyglot document evaluation)
 - GitHub public repository (for Colab to access your notebooks)
 - Google Colab account (for Colab features)
