@@ -148,3 +148,7 @@ This extension formed the basis of my [**second** ever issue ticket](https://git
 [oct2pymagic]: https://nbviewer.org/github/blink1073/oct2py/blob/main/example/octavemagic_extension.ipynb?create=1
 [jupysqlmagic]: https://jupysql.ploomber.io/en/latest/api/magic-sql.html
 [saspymagic]: https://sassoftware.github.io/saspy/advanced-topics.html#jupyter-magics
+
+## License
+
+colab is licensed under AGPL-3.0-or-later with an exception: what you write and render with colab stays yours, along with the output, under any terms you like. See [LICENSE](LICENSE) and [LICENSE-EXCEPTION.md](LICENSE-EXCEPTION.md).
