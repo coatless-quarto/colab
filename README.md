@@ -149,6 +149,12 @@ This extension formed the basis of my [**second** ever issue ticket](https://git
 [jupysqlmagic]: https://jupysql.ploomber.io/en/latest/api/magic-sql.html
 [saspymagic]: https://sassoftware.github.io/saspy/advanced-topics.html#jupyter-magics
 
+## Learn more
+
+- [Documentation](https://quarto.thecoatlessprofessor.com/colab/)
+- [Release notes](https://quarto.thecoatlessprofessor.com/colab/qcolab-release-notes.html)
+- [Blog posts](https://blog.thecoatlessprofessor.com/projects/colab/)
+
 ## License
 
 colab is licensed under AGPL-3.0-or-later with an exception: what you write and render with colab stays yours, along with the output, under any terms you like. See [LICENSE](LICENSE) and [LICENSE-EXCEPTION.md](LICENSE-EXCEPTION.md).
