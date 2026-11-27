@@ -163,7 +163,12 @@ end
 ---@param meta pandoc.Meta
 ---@return pandoc.Meta
 function Meta(meta)
-    magicCommands = merge_tables(DEFAULT_MAGIC_COMMANDS, meta['magic-commands'] or {})
+    -- Metadata values arrive as Pandoc inlines, so turn each magic command into text
+    local userMagicCommands = {}
+    for lang, command in pairs(meta['magic-commands'] or {}) do
+        userMagicCommands[lang] = pandoc.utils.stringify(command)
+    end
+    magicCommands = merge_tables(DEFAULT_MAGIC_COMMANDS, userMagicCommands)
 
     -- Convert user-defined setup-cells from Pandoc MetaMap to plain Lua tables
     local userSetupCells = {}
@@ -231,6 +236,11 @@ end
 ---@param block pandoc.CodeBlock
 ---@return pandoc.CodeBlock
 function CodeBlock(block)
+    -- Only add magic commands for ipynb output
+    if not quarto.doc.is_format("ipynb") then
+        return block
+    end
+
     if not isCellEvaluated(block) then
         return block
     end
@@ -246,7 +256,10 @@ end
 ---@param doc pandoc.Doc
 ---@return pandoc.Doc
 function Pandoc(doc)
-    if not quarto.doc.is_format("ipynb") then return doc end
+    -- Only add setup cells for ipynb output
+    if not quarto.doc.is_format("ipynb") then
+        return doc
+    end
 
     local detectedLangs = detectLanguages(doc)
     local setupBlocks = createSetupCells(detectedLangs)
