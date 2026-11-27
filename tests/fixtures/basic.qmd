@@ -1,0 +1,21 @@
+---
+title: "colab: badge, magics and setup cells"
+engine: knitr
+colab:
+  gh-user: octocat
+  gh-repo: notebooks
+  gh-branch: dev
+filters:
+  - colab
+---
+
+```{r}
+x <- 1
+x
+y <- 2
+y
+```
+
+```{bash}
+echo hi
+```

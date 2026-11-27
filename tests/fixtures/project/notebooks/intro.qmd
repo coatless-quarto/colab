@@ -1,0 +1,8 @@
+---
+title: "colab: a notebook in a project folder"
+engine: knitr
+---
+
+```{r}
+1 + 1
+```
