@@ -17,11 +17,11 @@ local function extract_github_info(meta)
     
     -- Extract GitHub user, repo, and branch from metadata
     ---@type string
-    local github_user = pandoc.utils.stringify(meta.colab["gh-user"])
+    local github_user = meta.colab["gh-user"] and pandoc.utils.stringify(meta.colab["gh-user"]) or nil
     ---@type string
-    local github_repo = pandoc.utils.stringify(meta.colab["gh-repo"])
+    local github_repo = meta.colab["gh-repo"] and pandoc.utils.stringify(meta.colab["gh-repo"]) or nil
     ---@type string
-    local github_branch = pandoc.utils.stringify(meta.colab["gh-branch"]) or "main" -- Default to "main" if not specified
+    local github_branch = meta.colab["gh-branch"] and pandoc.utils.stringify(meta.colab["gh-branch"]) or "main"
     ---@type string|nil
     local scroll_to = meta.colab["scroll-to"] and pandoc.utils.stringify(meta.colab["scroll-to"]) or nil
     
