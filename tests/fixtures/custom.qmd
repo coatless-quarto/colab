@@ -1,0 +1,26 @@
+---
+title: "colab: custom magic commands and setup cells"
+engine: knitr
+colab:
+  gh-user: octocat
+  gh-repo: notebooks
+  gh-branch: main
+magic-commands:
+  r: "%%Rcustom"
+setup-cells:
+  bash:
+    language: python
+    code: |
+      # Install the shell tools
+      !apt-get install -y jq
+filters:
+  - colab
+---
+
+```{r}
+1 + 1
+```
+
+```{bash}
+echo hi
+```

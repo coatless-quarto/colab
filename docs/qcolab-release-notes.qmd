@@ -19,3 +19,9 @@ format:
 - Colab badge generation
 - Convert non-Python code cells to use Jupyter's magic commands
 - Patch `knitr` output to ensure source code is retained.
+
+## Bug fixes
+
+- Notebooks start with the setup cells their languages need, such as `rpy2` for R, and custom `setup-cells` entries are added too.
+- Custom `magic-commands` entries are used, and `gh-branch` is optional, defaulting to `main`.
+- Magic commands and setup cells go only into the notebook, so HTML output shows the code as written.

@@ -1,0 +1,10 @@
+---
+title: "colab: no gh-branch"
+colab:
+  gh-user: octocat
+  gh-repo: notebooks
+filters:
+  - colab
+---
+
+The README says `gh-branch` is optional and defaults to `main`.
