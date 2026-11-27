@@ -1,0 +1,6 @@
+colab:
+  gh-user: octocat
+  gh-repo: course
+  gh-branch: main
+filters:
+  - colab
